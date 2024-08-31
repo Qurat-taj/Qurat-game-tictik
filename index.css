@@ -1,0 +1,143 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+*{
+    box-sizing: border-box;
+}
+
+/* --------------------------players------------------------------------------------------------- */
+.players{
+    border: 2px solid #0009ad;
+   display: flex;
+    max-width: 20rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    margin-top: 8rem;
+}
+.players div{
+    padding: 15px 25px;
+    border-radius: 1rem;
+    border: 2px solid white;
+}
+.players div.active{
+    background-color: navy;
+    color: white;
+}
+
+/* --------------------------------------------Game_board------------------------------------------------- */
+
+
+.Game_board{
+    margin-top: 3rem;
+display: grid;
+grid-template-columns: repeat(3,auto);
+}
+.cell{
+    border: 2px solid navy;
+    height: 5rem;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+/* ----------------------------------------adding _text _style in JS------------------------------------- */
+.cell.X{
+    color: white;
+    text-shadow: -2px -2px 3px #09aecb, 2px -2px 3px  #09aecb, -2px 2px 3px #09aecb, 2px 2px 3px #09aecb;
+}
+.cell.O{
+    text-shadow: -2px -2px 3px #e50c35, 2px -2px 3px  #e50c35, -2px 2px 3px #e50c35, 2px 2px 3px #e50c35;
+    color: white;
+}
+.cell:nth-child(1),.cell:nth-child(2),.cell:nth-child(3){
+    border-top: none;
+}
+
+/* .cell:nth-child(1),.cell:nth-child(4),.cell:nth-child(7){
+    border-left: none;
+}  ----------------------------------also use this code to perform same task.-------------------*/
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+/* .cell:nth-child(3),.cell:nth-child(6),.cell:nth-child(9){
+    border-right: none;
+} *-----------------------------------also use this code to perform same task.-------------------*/
+.cell:nth-child(3n){
+    border-right: none;
+}
+.cell:nth-child(7),.cell:nth-child(8),.cell:nth-child(9){
+    border-bottom: none;
+};
+
+/*/---------------------------------------Result------------------------------------------------------*/
+.result {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background: rgba(0, 0, 0, 0.6);
+
+}
+.result {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.result h1 {
+    font-size: 2.8rem;
+    color: white;
+    background-color:rgba(0,0,100,0.5);
+    padding: 0.2rem 1.5rem;
+}
+.result button{
+    font-size: 1.2rem;
+    background-color:rgba(0,0,100,0.5);
+    color: white;
+    padding: 0.2rem 1.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+.inaction{
+    display: none;
+}
+.disable{
+    pointer-events: none;
+    
+}
+
+.dark{
+    background: black;
+    color: white;
+}
+.light{
+    background: white;
+    color: black;
+}
+
+i{
+    font-family: fontawesome;
+    font-size: 3.5rem;
+}
